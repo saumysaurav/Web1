@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <link rel="stylesheet" href="website.css">
+    <script>
+        var attempt = 3; //Variable to count number of attempts
+//Below function Executes on click of login button 
+function validate() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username == "Vel Tech" && password == "CSE") {
+        alert("Login successfully");
+        window.location = "success.html"; //redirecting to other page return false;
+    }
+    else {
+        attempt--;//Decrementing by one
+        alert("Incorrect Password !! You have left " + attempt + " attempt;");
+        //Disabling fields after 3 attemptsif( attempt== 0){
+        document.getElementById("username").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+}
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Simple Website</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our simple website. This is the home section.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a small team dedicated to creating simple websites.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>You can reach us at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
+        </section>
+    </main> -->
+    <div class="container">
+        <div class="main">
+            <h3>Login </h3>
+            <hr />
+            <form id="form_id" method="post" name="myform">
+                <strong>User Name :</strong></br>
+                <input type="text" name="username" id="username" /></br>
+                <strong>Password :</strong></br>
+                <input type="password" name="password" id="password" /></br>
+                <input type="button" value="Login" id="submit" onclick="validate()" />
+            </form>
+            <span><b class="note">Note : </b><strong>For this demo use following username and password. <br /><b
+                        class="valid">
+                        <h4>User Name : Vel Tech<br />Password : CSE
+                    </b></h4></span></strong>
+        </div>
+        <div class="fugo">
+            <a href="images/Image.png"><img src="images/Image.png" /></a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Simple Website</p>
+    </footer>
+    <!-- <script src="smart.js"></script> -->
+</body>
+
+</html>
